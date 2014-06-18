@@ -1,7 +1,9 @@
 import math
 
+
 class Qudratic:
-    def __init__(self, a,b,c):   #formula: ax^2+bx+c=0
+    def __init__(self, a,b,c):   
+        """Creates a qudratic using the formula: ax^2+bx+c=0"""
         self.a = a
         self.b = b
         self.c = c
@@ -10,10 +12,12 @@ class Qudratic:
         a = str(self.a) + "x^2 + " + str(self.b) + "x + " + str(self.c)
         return a;
 
-    def displayFormula(self):                    #find name of toString for python
-        print (self.a,"x^2 +",self.b,"x +",self.c)
+    def displayFormula(self):    
+        """Prints out the formula of the qudratic"""               
+        print (self)
 
-    def getDiscriminant(self):    #Discriminant: b^2+4ac
+    def getDiscriminant(self):    
+        """Finds and returns the discriminant: b^2-4ac"""
         a = self.a 
         b = self.b
         c = self.c
@@ -22,6 +26,7 @@ class Qudratic:
         return d
 
     def getNumberOfRoots(self):
+        """Determines how many roots the qudratic has using the discriminant"""
         d = self.getDiscriminant()
         if d > 0:
             return 2
@@ -31,6 +36,7 @@ class Qudratic:
             return 1
 
     def isRealRoot(self):
+        """Determines if root/roots are real or imaginary"""
         d = self.getDiscriminant()
         
         if d < 0:
@@ -39,7 +45,11 @@ class Qudratic:
             return True
 
 
-    def getRoot1(self) :      #num is number of roots
+    def getRoot1(self) :      
+        """Gets first root:
+        If 2 real roots exists finds and returns the root in which the radical is subtracted.
+        If 1 real root exists finds and returns that 1 root.
+        If no real roots exist returns None"""
         a = self.a 
         b = self.b
         c = self.c
@@ -54,6 +64,10 @@ class Qudratic:
             return answer
 
     def getRoot2(self) :
+        """Gets second root:
+        If 2 real roots exists finds and returns the root in which the radical is added.
+        If 1 real root exists returns None.
+        If no real roots exist returns None"""
         a = self.a 
         b = self.b
         c = self.c
