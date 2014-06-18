@@ -22,6 +22,7 @@ class Qudratic:
         return d
 
     def getNumberOfRoots(self):
+        d = self.getDiscriminant()
         if d > 0:
             return 2
         elif d < 0:
