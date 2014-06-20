@@ -9,6 +9,9 @@ from Bzhilyanskaya_Nadja_Qudratic import Qudratic
 
 class TestQudratic(unittest.TestCase):
     
+    
+    #search for Set up in test units
+    
     def testGetDiscriminant(self):
         qud = Qudratic(1,2,3)
         qud2 = Qudratic(1,2,1)

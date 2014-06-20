@@ -5,8 +5,9 @@ class Qudratic:
     def __init__(self, a,b,c):   
         """Creates a qudratic using the formula: ax^2+bx+c=0"""
         self.a = a
-        self.b = b
+        self.b = b 
         self.c = c
+        self.d = (b**2)-(4*a*c)
 
     def __str__(self):
         a = str(self.a) + "x^2 + " + str(self.b) + "x + " + str(self.c)
@@ -18,28 +19,21 @@ class Qudratic:
 
     def getDiscriminant(self):    
         """Finds and returns the discriminant: b^2-4ac"""
-        a = self.a 
-        b = self.b
-        c = self.c
-        
-        d=(b**2)-(4*a*c)
-        return d
+        return self.d
 
     def getNumberOfRoots(self):
         """Determines how many roots the qudratic has using the discriminant"""
-        d = self.getDiscriminant()
-        if d > 0:
+        if self.d > 0:
             return 2
-        elif d < 0:
+        elif self.d < 0:
             return 0
         else:
             return 1
 
     def isRealRoot(self):
         """Determines if root/roots are real or imaginary"""
-        d = self.getDiscriminant()
-        
-        if d < 0:
+
+        if self.d < 0:
             return False
         else:
             return True
@@ -52,7 +46,6 @@ class Qudratic:
         If no real roots exist returns None"""
         a = self.a 
         b = self.b
-        c = self.c
         num = self.getNumberOfRoots()
         
         if num == 0 :
@@ -60,7 +53,7 @@ class Qudratic:
         elif num == 0 :
             answer= ((-1)*b) /(2*a)
         else :
-            answer = ((-1)*b + math.sqrt((b**2)-(4*a*c)))/(2*a)
+            answer = ((-1)*b + math.sqrt(self.d))/(2*a)
             return answer
 
     def getRoot2(self) :
@@ -70,13 +63,12 @@ class Qudratic:
         If no real roots exist returns None"""
         a = self.a 
         b = self.b
-        c = self.c
         num = self.getNumberOfRoots()
         
         if num < 2 :
             return None
         else :
-            answer = ((-1)*b - math.sqrt((b**2)-(4*a*c)))/(2*a)
+            answer = ((-1)*b - math.sqrt(self.d))/(2*a)
             return answer
       
 
