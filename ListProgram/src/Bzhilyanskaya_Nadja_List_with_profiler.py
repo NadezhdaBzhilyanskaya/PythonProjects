@@ -1,7 +1,5 @@
 import cProfile
-import re
-cProfile.run('re.compile("foo|bar")')
-
+import time
 
 def insert_at_0(list,a):   
     """Inserts variable at the beginning of the list"""
@@ -14,24 +12,31 @@ def insert_at_end(list,a):
 def insert_in_middle(list,a):   
     """Inserts variable in the middle of the list"""
     list.insert((int)(len(list)/2), a)
+    
+def sleep():
+    """SLeeps for 1 unit"""
+    time.sleep(1)
 
-if __name__ == "__main__":   
+def main():   
+    """Initiates program"""
     print("Welcome to the list Program")
     print("\n")
+    
+    list = []
+    
+    for x in range(0, 5000000):
+        list.append(str(x))
+    
+    insert_at_0(list,str(38574))
+    insert_at_end(list,str(38574))
+    insert_in_middle(list,str(38574))
+    sleep()
+    
+    
 
-    list1 = []
-    list2 = []
-    list3 = []
-    
-    for x in range(0, 10000):
-        list1.append(str(x))
-        list2.append(str(x))
-        list3.append(str(x))
-    
-    insert_at_0(list1,str(38574))
-    insert_at_end(list2,str(38574))
-    insert_in_middle(list3,str(38574))
-    
+if __name__ == "__main__":   
+   
+    cProfile.run('main()')
     print("Done")
     
 
