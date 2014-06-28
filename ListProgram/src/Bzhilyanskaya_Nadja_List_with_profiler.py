@@ -3,15 +3,18 @@ import time
 
 def insert_at_0(list,a):   
     """Inserts variable at the beginning of the list"""
-    list.insert(0, a)
+    for x in range(0, 10000):    
+        list.insert(0, a)
     
 def insert_at_end(list,a):   
     """Inserts variable at the end of the list"""
-    list.append(a)
+    for x in range(0, 10000):
+         list= list.append(a)
     
 def insert_in_middle(list,a):   
     """Inserts variable in the middle of the list"""
-    list.insert((int)(len(list)/2), a)
+    for x in range(0, 10000):
+        list.insert((int)(len(list)/2), a)
     
 def sleep():
     """SLeeps for 1 unit"""
@@ -24,13 +27,11 @@ def main():
     
     list = []
     
-    for x in range(0, 5000000):
+    for x in range(0, 10000):
         list.append(str(x))
     
     insert_at_0(list,str(38574))
     insert_at_end(list,str(38574))
-    insert_in_middle(list,str(38574))
-    sleep()
     
     
 
