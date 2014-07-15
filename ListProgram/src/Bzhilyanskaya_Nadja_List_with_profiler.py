@@ -32,6 +32,7 @@ def main():
     
     insert_at_0(list,str(38574))
     insert_at_end(list,str(38574))
+    sleep()
     
     
 
