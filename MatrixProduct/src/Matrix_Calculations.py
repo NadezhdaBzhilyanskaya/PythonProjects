@@ -16,16 +16,7 @@ def num_rows(m):
     return len(np.atleast_1d(m))
 
 def product(m1,m2):
-    if(num_columns(m1) != num_rows(m2)):
-        return None
-    
-    answer = np.zeros((num_rows(m1),num_columns(m2)))
-    
-    for x in range(0,num_columns(m2)):
-        for i in range(0,num_rows(m1)):
-            for j in range(num_columns(m1)):
-                answer[i,x] += m1[i,j]*m2[j,x]
-    
+    answer = np.dot(m1,m2)
     return answer         
     
 

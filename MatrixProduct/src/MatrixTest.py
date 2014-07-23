@@ -66,17 +66,6 @@ class TestQudratic(unittest.TestCase):
         result = mc.product(matrix1, matrix2)
         result2 = mc.product(matrix3, matrix4)
         
-        self.assertEqual(mc.num_columns(result),mc.num_columns(answer12), "Error finding product(wrong matrix size)")
-        self.assertEqual(mc.num_rows(result),mc.num_rows(answer12), "Error finding product(wrong matrix size)")
-        self.assertEqual(mc.num_columns(result2),mc.num_columns(answer34), "Error finding product(wrong matrix size)")
-        self.assertEqual(mc.num_rows(result2),mc.num_rows(answer34), "Error finding product(wrong matrix size)")
+        self.assertTrue(np.array_equal(result, answer12), "Error finding product")
+        self.assertTrue(np.array_equal(result2, answer34), "Error finding product")
         
-        for x in range(0,mc.num_rows(result)):
-            for i in range(0,mc.num_columns(result)):
-                self.assertEqual(result[x,i], answer12[x,i], "Error finding product")
-                
-        for x in range(0,mc.num_rows(result2)):
-            for i in range(0,mc.num_columns(result2)):
-                self.assertEqual(result2[x,i], answer34[x,i], "Error finding product")  
-        
-

@@ -23,7 +23,7 @@ class TestQudratic(unittest.TestCase):
         self.assertEqual(result2, -14, "Error finding dotproduct of 2d array")
         
     
-    def testLength(self):
+    def test_length(self):
         vector1 = np.array([6,8])
         vector2 = np.array([1,2,3])
         result = abv.length(vector1)
@@ -32,20 +32,20 @@ class TestQudratic(unittest.TestCase):
         self.assertEqual(result, 10, "Error finding length 2d array")
         self.assertEqual(result2, 3.74, "Error finding length 3d array")
 
-    def testDimensions(self):
-        vector1 = np.array([8])
+    def test_dimensions(self):
+        vector1 = np.array([])
         vector2 = np.array([1,2,3])
         vector3 = np.array([1,2,3,4,6,3,5,6,4,4])
-        result = abv.get_number_of_Dimensions(vector1)
-        result2 = abv.get_number_of_Dimensions(vector2)
-        result3 = abv.get_number_of_Dimensions(vector3)
+        result = abv.get_number_of_dimensions(vector1)
+        result2 = abv.get_number_of_dimensions(vector2)
+        result3 = abv.get_number_of_dimensions(vector3)
         
-        self.assertEqual(result, 1, "Error finding dimensions 1d array")
+        self.assertEqual(result, 0, "Error finding dimensions 1d array")
         self.assertEqual(result2, 3, "Error finding dimensions 3d array")
         self.assertEqual(result3, 10, "Error finding dimensions 10d array")
 
 
-    def testRadiansToDegrees(self) :      #num is number of roots
+    def test_radian_to_degrees(self) :      #num is number of roots
         result = round(abv.radians_to_degrees(1),1)
         result2 = round(abv.radians_to_degrees(54),2)
         result3 = round(abv.radians_to_degrees(-32),2)
@@ -54,7 +54,7 @@ class TestQudratic(unittest.TestCase):
         self.assertEqual(result2, 3093.97, "Error converting radians to degrees")
         self.assertEqual(result3, -1833.46, "Error converting radians to degrees")
 
-    def testAngle(self) :
+    def test_angle(self) :
         vector1 = np.array([1,2,3])
         vector2 = np.array([4,5,6])
         vector3 = np.array([3,5])
