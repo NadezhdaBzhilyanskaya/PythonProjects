@@ -64,6 +64,10 @@ class TestQudratic(unittest.TestCase):
         
         self.assertEqual(result, 0.226, "Error finding angle between 2, 3d vectors")
         self.assertEqual(result2, 1.13, "Error finding angle between 2, 2d vectors")
+        
+    def test_lenght_of_vectors_not_equal(self):
+        self.assertRaises(ValueError, abv.calculate_dotproduct([1,3,2],[1]))
+        self.assertRaises(TypeError, abv.calculate_angle([1,3,2],[1]))
 
 
     

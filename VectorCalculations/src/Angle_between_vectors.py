@@ -11,7 +11,7 @@ def calculate_dotproduct(v1,v2):
     """Calculates the dotproduct of 2 vectors given as v1 and v2"""
     try:
         return np.dot(v1,v2) 
-    except ValueError:
+    except ValueError:                  
         print("Vectors must have the same number of dimensions")
     
 def length(v):
